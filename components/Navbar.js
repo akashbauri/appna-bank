@@ -15,20 +15,20 @@ export default function Navbar() {
 
   return (
     <nav style={nav}>
-      <h3>APPNA BANK</h3>
+      <h2 style={{ margin: 0 }}>🚀 APPNA BANK</h2>
 
-      <div>
-        <Link href="/" style={link}>Home</Link>
-        <Link href="/dashboard" style={link}>Dashboard</Link>
-        <Link href="/loan" style={link}>Loan</Link>
-        <Link href="/ai-chat" style={link}>AI Chat</Link>
-        <Link href="/learn" style={link}>Learn</Link>
+      <div style={menu}>
+        <Link href="/">Home</Link>
+        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/loan">Loan</Link>
+        <Link href="/ai-chat">AI Chat</Link>
+        <Link href="/learn">Learn</Link>
       </div>
 
       {user ? (
-        <button onClick={() => signOut(auth)}>Logout</button>
+        <button style={btn} onClick={() => signOut(auth)}>Logout</button>
       ) : (
-        <button onClick={login}>Login</button>
+        <button style={btn} onClick={login}>Login</button>
       )}
     </nav>
   );
@@ -37,13 +37,21 @@ export default function Navbar() {
 const nav = {
   display: "flex",
   justifyContent: "space-between",
-  padding: "15px",
-  background: "#111",
+  alignItems: "center",
+  padding: "15px 30px",
+  background: "#000",
   color: "white"
 };
 
-const link = {
-  margin: "0 10px",
-  color: "white",
-  textDecoration: "none"
+const menu = {
+  display: "flex",
+  gap: "20px"
+};
+
+const btn = {
+  padding: "8px 15px",
+  borderRadius: "6px",
+  border: "none",
+  background: "#fff",
+  cursor: "pointer"
 };
